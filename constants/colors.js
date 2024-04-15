@@ -13,4 +13,7 @@ module.exports = {
   gray: {
     100: "#CDCDE0",
   },
+  input: {
+    placeholder: "#7b7b8b",
+  },
 };

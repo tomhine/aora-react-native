@@ -1,7 +1,9 @@
 import { Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { images } from "../constants";
+import { colors, images } from "../constants";
 import CustomButton from "../components/CustomButton";
+import { StatusBar } from "expo-status-bar";
+import { router } from "expo-router";
 
 const Index = () => {
   return (
@@ -20,7 +22,7 @@ const Index = () => {
           />
 
           <View className="relative mt-5">
-            <Text className="text-3xl text-white text-center">
+            <Text className="text-3xl font-psemibold text-white text-center">
               Discover Endless Possibilities with{" "}
               <Text className="text-secondary-200">Aora</Text>
             </Text>
@@ -31,17 +33,20 @@ const Index = () => {
             />
           </View>
 
-          <Text className="text-sm text-gray-100 mt-7 text-center">
+          <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
             Where creativity meets innovation: embark on a journey of limitless
             exploration with Aora
           </Text>
 
           <CustomButton
-            title={"Get Started"}
+            title={"Continue with Email"}
+            handlePress={() => router.push("/sign-in")}
             containerStyles={"mt-10 w-full"}
           />
         </View>
       </ScrollView>
+
+      <StatusBar backgroundColor={colors.primary} style={"light"} />
     </SafeAreaView>
   );
 };
